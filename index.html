@@ -59,14 +59,6 @@ header {
     gap: 12px;
 }
 
-.brand img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    background: white;
-    border-radius: 50%;
-}
-
 .brand-text h2 {
     font-size: 17px;
     color: var(--light-gold);
@@ -121,8 +113,6 @@ nav a:hover {
     color: white;
 }
 
-/* SLIDESHOW IMAGES */
-
 .hero-slides {
     position: absolute;
     inset: 0;
@@ -150,8 +140,6 @@ nav a:hover {
     visibility: visible;
 }
 
-/* DARK OVERLAY */
-
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -163,8 +151,6 @@ nav a:hover {
     );
     z-index: 1;
 }
-
-/* HERO CONTENT */
 
 .hero-content {
     position: relative;
@@ -286,13 +272,8 @@ nav a:hover {
     color: var(--deep-purple);
 }
 
-.slide-prev {
-    left: 25px;
-}
-
-.slide-next {
-    right: 25px;
-}
+.slide-prev { left: 25px; }
+.slide-next { right: 25px; }
 
 .slide-dots {
     position: absolute;
@@ -490,11 +471,197 @@ section {
     margin-bottom: 8px;
 }
 
-/* SERMONS AND EVENTS */
+/* SERMONS */
 
 .sermons {
     background: white;
 }
+
+.sermon-intro {
+    max-width: 800px;
+    margin: -15px auto 35px;
+    text-align: center;
+    color: #6d6174;
+}
+
+.sermon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.sermon-card {
+    background: var(--cream);
+    border: 1px solid #ead9b6;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.sermon-screen {
+    min-height: 190px;
+    background: linear-gradient(135deg, #19082c, #49216b);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.sermon-screen .play-symbol {
+    font-size: 43px;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.sermon-screen p {
+    color: var(--light-gold);
+    font-size: 14px;
+}
+
+.sermon-info {
+    padding: 22px;
+}
+
+.sermon-info h3 {
+    color: var(--purple);
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.sermon-info p {
+    color: #6d6174;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.sermon-date {
+    color: #8a682f !important;
+    font-weight: bold;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.coming-soon {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 7px 14px;
+    background: #eee5f4;
+    color: var(--purple);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* FACEBOOK LIVE */
+
+.facebook-live {
+    margin: 55px auto 0;
+    max-width: 1050px;
+    padding: 35px;
+    background: var(--deep-purple);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid var(--gold);
+}
+
+.facebook-live h3 {
+    color: var(--gold);
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.facebook-live > p {
+    color: #eee5f4;
+    margin-bottom: 22px;
+}
+
+.live-status {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--gold);
+    padding: 9px 18px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    color: var(--light-gold);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.live-status.live-now {
+    background: #a51e2d;
+    border-color: #ffb7b7;
+    color: white;
+}
+
+.facebook-video-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 22px;
+    aspect-ratio: 16 / 9;
+    background: #090313;
+    border: 1px solid rgba(216,173,85,0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.facebook-video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.live-placeholder {
+    height: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.live-placeholder .live-icon {
+    font-size: 45px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.live-placeholder h4 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.live-placeholder p {
+    color: #e5dbea;
+    max-width: 500px;
+    font-size: 14px;
+}
+
+.facebook-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background: #1877F2;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.facebook-button:hover {
+    background: #0d5ec4;
+    transform: translateY(-2px);
+}
+
+/* EVENTS */
 
 .events {
     background: #f8f1e7;
@@ -659,16 +826,15 @@ footer p {
     .service-grid {
         grid-template-columns: 1fr;
     }
+
+    .sermon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media(max-width: 650px) {
     section {
         padding: 55px 6%;
-    }
-
-    .brand img {
-        width: 52px;
-        height: 52px;
     }
 
     .brand-text h2 {
@@ -708,16 +874,12 @@ footer p {
         font-size: 22px;
     }
 
-    .slide-prev {
-        left: 10px;
-    }
-
-    .slide-next {
-        right: 10px;
-    }
+    .slide-prev { left: 10px; }
+    .slide-next { right: 10px; }
 
     .vm-grid,
-    .leader-grid {
+    .leader-grid,
+    .sermon-grid {
         grid-template-columns: 1fr;
     }
 
@@ -727,6 +889,18 @@ footer p {
 
     .prayer-form {
         padding: 20px;
+    }
+
+    .facebook-live {
+        padding: 22px 15px;
+    }
+
+    .facebook-live h3 {
+        font-size: 23px;
+    }
+
+    .live-placeholder {
+        min-height: 190px;
     }
 }
 </style>
@@ -738,8 +912,6 @@ footer p {
 
 <header>
     <div class="brand">
-        
-
         <div class="brand-text">
             <h2>HOUSE OF PRAYER</h2>
             <p>CHURCH OF ALL NATIONS</p>
@@ -767,23 +939,17 @@ footer p {
 
     <div class="hero-slides">
 
-        <img
-            src="SERVICE.jpeg"
-            class="hero-slide active"
-            alt="House of Prayer church service"
-        >
+        <img src="SERVICE.jpeg"
+             class="hero-slide active"
+             alt="House of Prayer church service">
 
-        <img
-            src="NTATE%20MOHLAOLI.jpeg"
-            class="hero-slide"
-            alt="Senior Pastor Prophet Mohlaoli"
-        >
+        <img src="NTATE%20MOHLAOLI.jpeg"
+             class="hero-slide"
+             alt="Senior Pastor Prophet Mohlaoli">
 
-        <img
-            src="MME%20RELE.jpeg"
-            class="hero-slide"
-            alt="House of Prayer church ministry"
-        >
+        <img src="MME%20RELE.jpeg"
+             class="hero-slide"
+             alt="House of Prayer church ministry">
 
     </div>
 
@@ -799,11 +965,9 @@ footer p {
 
     <div class="hero-content">
 
-        <img
-            src="MY%20LOGO.jpeg"
-            alt="Church Logo"
-            class="hero-logo"
-        >
+        <img src="MY%20LOGO.jpeg"
+             alt="Church Logo"
+             class="hero-logo">
 
         <div class="welcome-label">Welcome to</div>
 
@@ -874,11 +1038,7 @@ footer p {
 
 <div class="scripture">
     <h2>A House of Prayer for All People</h2>
-
-    <p>
-        "For mine house shall be called an house of prayer for all people."
-    </p>
-
+    <p>"For mine house shall be called an house of prayer for all people."</p>
     <small>ISAIAH 56:7</small>
 </div>
 
@@ -979,7 +1139,7 @@ footer p {
 
 </section>
 
-<!-- SERMONS -->
+<!-- SERMONS AND TEACHINGS -->
 
 <section class="sermons" id="sermons">
 
@@ -989,14 +1149,137 @@ footer p {
         <p>Growing through the Word of God</p>
     </div>
 
-    <div class="placeholder-card">
-        <h3>Be Inspired. Be Transformed.</h3>
+    <p class="sermon-intro">
+        Be encouraged, renewed and strengthened through the Word of God.
+        Our sermons and teachings will be available here.
+    </p>
+
+    <div class="sermon-grid">
+
+        <!-- SERMON PLACEHOLDER 1
+             When you have a sermon video, replace the sermon-screen
+             div with an embedded video iframe.
+             Update the title, date and description below.
+        -->
+
+        <article class="sermon-card">
+
+            <div class="sermon-screen">
+                <div class="play-symbol">▶</div>
+                <h3>First Sermon Coming Soon</h3>
+                <p>Video will appear here</p>
+            </div>
+
+            <div class="sermon-info">
+                <p class="sermon-date">Sermon 01 | Date to be added</p>
+                <h3>Message Title Coming Soon</h3>
+                <p>
+                    A description of the sermon will be added here
+                    when the message is uploaded.
+                </p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+
+        </article>
+
+        <!-- SERMON PLACEHOLDER 2 -->
+
+        <article class="sermon-card">
+
+            <div class="sermon-screen">
+                <div class="play-symbol">▶</div>
+                <h3>Second Sermon Coming Soon</h3>
+                <p>Video will appear here</p>
+            </div>
+
+            <div class="sermon-info">
+                <p class="sermon-date">Sermon 02 | Date to be added</p>
+                <h3>Message Title Coming Soon</h3>
+                <p>
+                    Add a short summary of the teaching or message here.
+                </p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+
+        </article>
+
+        <!-- SERMON PLACEHOLDER 3 -->
+
+        <article class="sermon-card">
+
+            <div class="sermon-screen">
+                <div class="play-symbol">▶</div>
+                <h3>Third Sermon Coming Soon</h3>
+                <p>Video will appear here</p>
+            </div>
+
+            <div class="sermon-info">
+                <p class="sermon-date">Sermon 03 | Date to be added</p>
+                <h3>Message Title Coming Soon</h3>
+                <p>
+                    Add a short summary of the teaching or message here.
+                </p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- FACEBOOK LIVE STREAMING -->
+
+    <div class="facebook-live">
+
+        <h3>Watch Us Live</h3>
 
         <p>
-            This is where our sermons, teachings and messages
-            will be shared. Visit again as we continue adding
-            spiritual resources to help you grow in faith.
+            Join us online during our church services.
+            Wherever you are, you can worship and fellowship with us.
         </p>
+
+        <div id="liveStatus" class="live-status">
+            LIVE STREAMING INFORMATION
+        </div>
+
+        <div class="facebook-video-wrap">
+
+            <!-- The Facebook live video will appear here
+                 after a Facebook Live video link is added. -->
+
+            <div class="live-placeholder" id="livePlaceholder">
+                <div class="live-icon">▶</div>
+                <h4>Our Live Services</h4>
+                <p>
+                    Our next live service will be announced here.
+                    Please visit our Facebook page to stay connected
+                    and receive updates.
+                </p>
+            </div>
+
+            <iframe
+                id="facebookLiveFrame"
+                title="House of Prayer Facebook Live Stream"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowfullscreen
+                style="display:none;">
+            </iframe>
+
+        </div>
+
+        <a
+            href="#"
+            id="facebookPageButton"
+            class="facebook-button"
+            target="_blank"
+            rel="noopener"
+            style="display:none;">
+            Visit Our Facebook Page
+        </a>
+
+        <p id="facebookSetupMessage" style="font-size:12px; margin-top:15px;">
+            Facebook streaming connection will be activated soon.
+        </p>
+
     </div>
 
 </section>
@@ -1013,7 +1296,6 @@ footer p {
 
     <div class="placeholder-card">
         <h3>Stay Connected</h3>
-
         <p>
             Church programmes, special services, conferences
             and upcoming events will be announced here.
@@ -1043,16 +1325,14 @@ footer p {
         <input
             type="text"
             id="visitorName"
-            placeholder="Enter your name"
-        >
+            placeholder="Enter your name">
 
         <label for="prayerMessage">Your Prayer Request</label>
 
         <textarea
             id="prayerMessage"
             placeholder="Write your prayer request here..."
-            required
-        ></textarea>
+            required></textarea>
 
         <button type="submit" class="btn btn-gold">
             Send Prayer Request via WhatsApp
@@ -1074,8 +1354,7 @@ footer p {
             href="https://wa.me/26657014205?text=Hello%20House%20of%20Prayer%20Church.%20I%20would%20like%20to%20share%20my%20testimony."
             class="btn btn-gold"
             target="_blank"
-            rel="noopener"
-        >
+            rel="noopener">
             Share Your Testimony
         </a>
 
@@ -1108,8 +1387,7 @@ footer p {
                 href="https://wa.me/26657014205"
                 target="_blank"
                 rel="noopener"
-                class="btn btn-gold"
-            >
+                class="btn btn-gold">
                 Contact Us on WhatsApp
             </a>
         </div>
@@ -1147,12 +1425,29 @@ footer p {
     class="whatsapp-float"
     href="https://wa.me/26657014205"
     target="_blank"
-    rel="noopener"
->
+    rel="noopener">
     WhatsApp Us
 </a>
 
 <script>
+
+/* ==================================================
+   FACEBOOK SETTINGS
+
+   1. Add the church Facebook page URL below.
+   2. When you have a Facebook Live video, add its
+      full public video URL in FACEBOOK_LIVE_VIDEO_URL.
+
+   Leave the live video setting empty when the church
+   is not streaming. The placeholder will appear.
+================================================== */
+
+const FACEBOOK_PAGE_URL = "";
+
+// Example format:
+// https://www.facebook.com/watch/?v=123456789
+const FACEBOOK_LIVE_VIDEO_URL = "";
+
 
 /* MOBILE NAVIGATION */
 
@@ -1164,6 +1459,7 @@ function closeMenu() {
     document.getElementById("navigation").classList.remove("show");
 }
 
+
 /* HERO SLIDESHOW */
 
 const slides = document.querySelectorAll(".hero-slide");
@@ -1174,6 +1470,8 @@ let slideTimer = null;
 
 function showSlide(index) {
 
+    if (!slides.length) return;
+
     slides[currentSlide].classList.remove("active");
     dots[currentSlide].classList.remove("active");
 
@@ -1181,7 +1479,6 @@ function showSlide(index) {
 
     slides[currentSlide].classList.add("active");
     dots[currentSlide].classList.add("active");
-
 }
 
 function changeSlide(direction) {
@@ -1201,7 +1498,6 @@ function startSlideshow() {
     slideTimer = setInterval(function() {
         showSlide(currentSlide + 1);
     }, 5000);
-
 }
 
 function restartSlideshow() {
@@ -1209,11 +1505,10 @@ function restartSlideshow() {
     startSlideshow();
 }
 
-/* START AUTOMATIC SLIDESHOW */
-
 startSlideshow();
 
-/* PAUSE WHEN BROWSER TAB IS HIDDEN */
+
+/* PAUSE SLIDESHOW WHEN TAB IS HIDDEN */
 
 document.addEventListener("visibilitychange", function() {
 
@@ -1222,8 +1517,56 @@ document.addEventListener("visibilitychange", function() {
     } else {
         restartSlideshow();
     }
-
 });
+
+
+/* FACEBOOK LIVE CONNECTION */
+
+function setupFacebookLive() {
+
+    const frame = document.getElementById("facebookLiveFrame");
+    const placeholder = document.getElementById("livePlaceholder");
+    const status = document.getElementById("liveStatus");
+    const pageButton = document.getElementById("facebookPageButton");
+    const setupMessage = document.getElementById("facebookSetupMessage");
+
+    // Show the Facebook page button when its URL is provided.
+
+    if (FACEBOOK_PAGE_URL.trim() !== "") {
+
+        pageButton.href = FACEBOOK_PAGE_URL;
+        pageButton.style.display = "inline-block";
+        setupMessage.textContent =
+            "Follow our Facebook page for service announcements and live broadcasts.";
+
+    }
+
+    // Show the embedded live video when a video URL is provided.
+
+    if (FACEBOOK_LIVE_VIDEO_URL.trim() !== "") {
+
+        const facebookEmbedURL =
+            "https://www.facebook.com/plugins/video.php?href=" +
+            encodeURIComponent(FACEBOOK_LIVE_VIDEO_URL) +
+            "&show_text=false&width=800";
+
+        frame.src = facebookEmbedURL;
+        frame.style.display = "block";
+        placeholder.style.display = "none";
+
+        status.textContent = "LIVE VIDEO AVAILABLE";
+        status.classList.add("live-now");
+
+    } else {
+
+        frame.style.display = "none";
+        placeholder.style.display = "flex";
+
+    }
+}
+
+setupFacebookLive();
+
 
 /* WHATSAPP PRAYER REQUEST */
 
@@ -1254,6 +1597,7 @@ function sendPrayer(event) {
     window.open(whatsappURL, "_blank");
 
 }
+
 
 /* COPYRIGHT YEAR */
 
