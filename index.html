@@ -47,6 +47,8 @@ button {
   font: inherit;
 }
 
+/* HEADER AND NAVIGATION */
+
 header {
   background: var(--purple);
   color: white;
@@ -115,6 +117,8 @@ nav a:hover {
   cursor: pointer;
   font-size: 22px;
 }
+
+/* HERO */
 
 .hero {
   min-height: 620px;
@@ -217,6 +221,8 @@ nav a:hover {
   background: transparent;
 }
 
+/* GENERAL SECTIONS */
+
 section {
   padding: 85px 7%;
   scroll-margin-top: 95px;
@@ -247,6 +253,8 @@ section {
   color: #716b7c;
 }
 
+/* ABOUT */
+
 .about {
   background: white;
   text-align: center;
@@ -261,6 +269,67 @@ section {
   margin-bottom: 17px;
   font-size: 17px;
 }
+
+/* VISION AND MISSION */
+
+.vision-mission {
+  background:
+    linear-gradient(135deg, #160e3d, #39258c, #160e3d);
+  color: white;
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
+}
+
+.vision-mission .section-heading h2 {
+  color: white;
+}
+
+.vision-mission .section-heading span {
+  color: var(--gold);
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.vm-card {
+  padding: 45px 35px;
+  text-align: center;
+  border: 1px solid rgba(228,189,98,.65);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+  transition: .3s;
+}
+
+.vm-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.vm-icon {
+  color: var(--gold);
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.vm-card h3 {
+  color: var(--gold);
+  font-size: 27px;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+}
+
+.vm-card p {
+  color: #f5f1ff;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+/* SCRIPTURE */
 
 .scripture {
   background: var(--purple);
@@ -290,6 +359,8 @@ section {
   margin-top: 18px;
   letter-spacing: 2px;
 }
+
+/* LEADERSHIP */
 
 .leadership {
   background: var(--cream);
@@ -334,6 +405,8 @@ section {
   font-size: 13px;
   margin-top: 8px;
 }
+
+/* WEEKLY SERVICES */
 
 .services {
   background: white;
@@ -387,6 +460,8 @@ section {
   font-family: Arial, sans-serif;
 }
 
+/* SERMONS AND TEACHINGS */
+
 .media-section {
   background: var(--purple);
   color: white;
@@ -425,6 +500,8 @@ section {
   color: #e3def2;
 }
 
+/* EVENTS */
+
 .events {
   background: white;
   text-align: center;
@@ -443,6 +520,8 @@ section {
   font-size: 23px;
 }
 
+/* PRAYER */
+
 .prayer {
   text-align: center;
   background: linear-gradient(130deg, #291969, #49349a);
@@ -459,6 +538,8 @@ section {
   max-width: 650px;
   margin: auto;
 }
+
+/* LOCATION AND CONTACT */
 
 .location {
   text-align: center;
@@ -477,6 +558,8 @@ section {
   color: var(--purple);
   font-size: 24px;
 }
+
+/* FOOTER */
 
 footer {
   background: #130d35;
@@ -511,6 +594,8 @@ footer p {
   padding-top: 18px;
   margin-top: 25px;
 }
+
+/* RESPONSIVE DESIGN */
 
 @media(max-width: 850px) {
   nav {
@@ -583,8 +668,13 @@ footer p {
 
   .leader-grid,
   .service-grid,
-  .media-grid {
+  .media-grid,
+  .vm-grid {
     grid-template-columns: 1fr;
+  }
+
+  .vm-card {
+    padding: 35px 22px;
   }
 
   .scripture p {
@@ -605,11 +695,14 @@ footer p {
     </div>
   </a>
 
-  <button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+  <button class="menu-btn"
+    onclick="toggleMenu()"
+    aria-label="Open navigation menu">☰</button>
 
   <nav id="navigation">
     <a href="#home" onclick="closeMenu()">Home</a>
     <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#vision-mission" onclick="closeMenu()">Vision & Mission</a>
     <a href="#leadership" onclick="closeMenu()">Leadership</a>
     <a href="#services" onclick="closeMenu()">Services</a>
     <a href="#sermons" onclick="closeMenu()">Sermons</a>
@@ -620,13 +713,19 @@ footer p {
 
 <main>
 
+<!-- HOME -->
+
 <section class="hero" id="home">
   <div class="hero-content">
-    <img src="MY LOGO.jpeg" alt="House of Prayer logo" class="hero-logo">
+
+    <img src="MY LOGO.jpeg"
+      alt="House of Prayer logo"
+      class="hero-logo">
 
     <div class="eyebrow">Arena of Solutions</div>
 
-    <h1>Welcome to the<br>
+    <h1>
+      Welcome to the<br>
       <span>House of Prayer</span>
     </h1>
 
@@ -637,16 +736,21 @@ footer p {
 
     <a href="#services" class="btn">OUR SERVICES</a>
     <a href="#about" class="btn btn-outline">DISCOVER OUR CHURCH</a>
+
   </div>
 </section>
 
+<!-- ABOUT -->
+
 <section class="about" id="about">
+
   <div class="section-heading">
     <span>Discover Our Ministry</span>
     <h2>About Our Church</h2>
   </div>
 
   <div class="about-content">
+
     <p>
       HOUSE OF PRAYER CHURCH OF ALL NATIONS, known as
       <strong>Arena of Solutions</strong>, is a Christian ministry
@@ -663,19 +767,70 @@ footer p {
       Our doors are open to people seeking God, encouragement,
       spiritual guidance and a deeper relationship with Him.
     </p>
+
   </div>
 </section>
 
+<!-- VISION AND MISSION -->
+
+<section class="vision-mission" id="vision-mission">
+
+  <div class="section-heading">
+    <span>Our Purpose and Calling</span>
+    <h2>Our Vision & Mission</h2>
+    <p>
+      Guided by faith, committed to transformation
+      and dedicated to serving God's purpose.
+    </p>
+  </div>
+
+  <div class="vm-grid">
+
+    <div class="vm-card">
+      <div class="vm-icon">✧</div>
+
+      <h3>OUR VISION</h3>
+
+      <p>
+        Our vision is to build a Healing Centre —
+        a place where Jesus is Lord and where we are kings.
+      </p>
+    </div>
+
+    <div class="vm-card">
+      <div class="vm-icon">✝</div>
+
+      <h3>OUR MISSION</h3>
+
+      <p>
+        We are here on a mission, commissioned to serve a purpose.
+        Our purpose is to deliver our people from the powers of
+        darkness and to transform their minds.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCRIPTURE -->
+
 <section class="scripture">
+
   <h2>A House of Prayer for All Nations</h2>
+
   <p>
     "For mine house shall be called an house of prayer
     for all people."
   </p>
+
   <strong>ISAIAH 56:7</strong>
+
 </section>
 
+<!-- LEADERSHIP -->
+
 <section class="leadership" id="leadership">
+
   <div class="section-heading">
     <span>Our Spiritual Leadership</span>
     <h2>Church Leadership</h2>
@@ -699,7 +854,10 @@ footer p {
   </div>
 </section>
 
+<!-- WEEKLY SERVICES -->
+
 <section class="services" id="services">
+
   <div class="section-heading">
     <span>Worship With Us</span>
     <h2>Our Weekly Services</h2>
@@ -741,7 +899,10 @@ footer p {
   </div>
 </section>
 
+<!-- SERMONS AND TEACHINGS -->
+
 <section class="media-section" id="sermons">
+
   <div class="section-heading">
     <span>Grow in the Word</span>
     <h2>Sermons & Teachings</h2>
@@ -752,6 +913,7 @@ footer p {
   </div>
 
   <div class="media-grid">
+
     <div class="media-card">
       <h3>Latest Sermons</h3>
       <p>
@@ -767,10 +929,14 @@ footer p {
         will be available here.
       </p>
     </div>
+
   </div>
 </section>
 
+<!-- EVENTS -->
+
 <section class="events" id="events">
+
   <div class="section-heading">
     <span>Be Part of Our Fellowship</span>
     <h2>Church Events</h2>
@@ -784,49 +950,70 @@ footer p {
       published here.
     </p>
   </div>
+
 </section>
 
+<!-- PRAYER -->
+
 <section class="prayer">
+
   <h2>We Believe in the Power of Prayer</h2>
+
   <p>
     Prayer is at the heart of our ministry.
     We believe in seeking God, trusting His Word
     and standing together in faith.
     Prayer request contact information will be added soon.
   </p>
+
 </section>
 
+<!-- LOCATION AND CONTACT -->
+
 <section class="location" id="contact">
+
   <div class="section-heading">
     <span>Come and Worship With Us</span>
     <h2>Find Our Church</h2>
   </div>
 
   <div class="location-card">
+
     <h3>House of Prayer Church of All Nations</h3>
+
     <p><strong>Location:</strong> Qalakheng, Mohale's Hoek</p>
     <p><strong>Country:</strong> Kingdom of Lesotho</p>
     <p><strong>Identity:</strong> Arena of Solutions</p>
+
     <p style="margin-top:15px;">
       Contact details and additional directions
       will be added soon.
     </p>
+
   </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
+
   <img src="MY LOGO.jpeg" alt="House of Prayer logo">
 
   <h3>HOUSE OF PRAYER CHURCH OF ALL NATIONS</h3>
+
   <p>Arena of Solutions</p>
   <p>Qalakheng, Mohale's Hoek, Lesotho</p>
 
   <div class="footer-bottom">
-    <p>© <span id="year"></span> House of Prayer Church of All Nations.</p>
+    <p>
+      © <span id="year"></span>
+      House of Prayer Church of All Nations.
+    </p>
     <p>All Rights Reserved.</p>
   </div>
+
 </footer>
 
 <script>
