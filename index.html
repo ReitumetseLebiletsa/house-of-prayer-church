@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>House of Prayer Church of All Nations | Arena of Solutions</title>
+
+<meta name="description" content="Welcome to House of Prayer Church of All Nations, Arena of Solutions, located in Qalakheng, Mohale's Hoek, Lesotho.">
+
+<meta name="theme-color" content="#21145c">
+
+<style>
+:root {
+  --purple: #21145c;
+  --purple-light: #39258c;
+  --gold: #e4bd62;
+  --red: #a92c3b;
+  --white: #ffffff;
+  --cream: #faf8f2;
+  --text: #29243a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--cream);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+header {
+  background: var(--purple);
+  color: white;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--gold);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: var(--gold);
+}
+
+.brand-name small {
+  display: block;
+  font-size: 11px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+nav a {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--gold);
+  color: white;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 90px 7%;
+  color: white;
+  background:
+    radial-gradient(circle at center, #49349a 0%, #291969 48%, #160e3d 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(228,189,98,.25);
+  border-radius: 50%;
+}
+
+.hero::before {
+  top: -180px;
+  left: -100px;
+}
+
+.hero::after {
+  bottom: -200px;
+  right: -100px;
+}
+
+.hero-content {
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 145px;
+  height: 145px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 35px rgba(228,189,98,.3);
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 680px;
+  margin: 0 auto 30px;
+  color: #eee9ff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 28px;
+  margin: 7px;
+  background: var(--gold);
+  color: var(--purple);
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 1px solid var(--gold);
+  color: white;
+  background: transparent;
+}
+
+section {
+  padding: 85px 7%;
+  scroll-margin-top: 95px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading span {
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-family: Arial, sans-serif;
+}
+
+.section-heading h2 {
+  color: var(--purple);
+  font-size: clamp(28px, 4vw, 42px);
+  margin-top: 8px;
+}
+
+.section-heading p {
+  max-width: 650px;
+  margin: 12px auto 0;
+  color: #716b7c;
+}
+
+.about {
+  background: white;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 850px;
+  margin: auto;
+}
+
+.about-content p {
+  margin-bottom: 17px;
+  font-size: 17px;
+}
+
+.scripture {
+  background: var(--purple);
+  color: white;
+  text-align: center;
+  padding: 65px 8%;
+  border-top: 4px solid var(--gold);
+  border-bottom: 4px solid var(--gold);
+}
+
+.scripture h2 {
+  color: var(--gold);
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.scripture p {
+  font-size: 21px;
+  font-style: italic;
+  max-width: 750px;
+  margin: auto;
+}
+
+.scripture strong {
+  display: block;
+  color: var(--gold);
+  margin-top: 18px;
+  letter-spacing: 2px;
+}
+
+.leadership {
+  background: var(--cream);
+}
+
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.leader-card {
+  background: white;
+  text-align: center;
+  padding: 38px 25px;
+  border-bottom: 4px solid var(--gold);
+  box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+
+.leader-icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin: auto auto 20px;
+  display: grid;
+  place-items: center;
+  background: var(--purple);
+  color: var(--gold);
+  font-size: 35px;
+}
+
+.leader-card h3 {
+  color: var(--purple);
+  font-size: 23px;
+}
+
+.leader-card p {
+  color: #777;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.services {
+  background: white;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  padding: 35px 23px;
+  background: var(--cream);
+  text-align: center;
+  border-top: 4px solid var(--purple);
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+}
+
+.service-icon {
+  font-size: 37px;
+  color: var(--red);
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  color: var(--purple);
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #716b7c;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.day {
+  display: inline-block;
+  background: var(--purple);
+  color: var(--gold);
+  padding: 5px 14px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-family: Arial, sans-serif;
+}
+
+.media-section {
+  background: var(--purple);
+  color: white;
+  text-align: center;
+}
+
+.media-section .section-heading h2 {
+  color: white;
+}
+
+.media-section .section-heading p {
+  color: #ddd6f4;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.media-card {
+  border: 1px solid rgba(228,189,98,.5);
+  padding: 35px 20px;
+  background: rgba(255,255,255,.06);
+}
+
+.media-card h3 {
+  color: var(--gold);
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.media-card p {
+  color: #e3def2;
+}
+
+.events {
+  background: white;
+  text-align: center;
+}
+
+.event-placeholder {
+  max-width: 750px;
+  margin: auto;
+  padding: 35px;
+  border: 1px dashed var(--gold);
+  background: var(--cream);
+}
+
+.event-placeholder h3 {
+  color: var(--purple);
+  font-size: 23px;
+}
+
+.prayer {
+  text-align: center;
+  background: linear-gradient(130deg, #291969, #49349a);
+  color: white;
+}
+
+.prayer h2 {
+  font-size: 35px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.prayer p {
+  max-width: 650px;
+  margin: auto;
+}
+
+.location {
+  text-align: center;
+  background: var(--cream);
+}
+
+.location-card {
+  background: white;
+  max-width: 700px;
+  margin: auto;
+  padding: 35px;
+  border-bottom: 4px solid var(--gold);
+}
+
+.location-card h3 {
+  color: var(--purple);
+  font-size: 24px;
+}
+
+footer {
+  background: #130d35;
+  color: white;
+  padding: 45px 7% 20px;
+  text-align: center;
+}
+
+footer img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+  margin-bottom: 15px;
+}
+
+footer h3 {
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+footer p {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #cfc9e2;
+}
+
+.footer-bottom {
+  border-top: 1px solid #51477b;
+  padding-top: 18px;
+  margin-top: 25px;
+}
+
+@media(max-width: 850px) {
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .brand-name {
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 650px) {
+  header {
+    padding: 10px 5%;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--purple);
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid var(--gold);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 14px;
+    width: 100%;
+    padding: 7px 0;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 65px 6%;
+  }
+
+  .hero-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+
+  .leader-grid,
+  .service-grid,
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scripture p {
+    font-size: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#home" class="brand">
+    <img src="logo.jpg" alt="House of Prayer Church logo">
+    <div class="brand-name">
+      HOUSE OF PRAYER
+      <small>CHURCH OF ALL NATIONS</small>
+    </div>
+  </a>
+
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+  <nav id="navigation">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#leadership" onclick="closeMenu()">Leadership</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#sermons" onclick="closeMenu()">Sermons</a>
+    <a href="#events" onclick="closeMenu()">Events</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <img src="logo.jpg" alt="House of Prayer logo" class="hero-logo">
+
+    <div class="eyebrow">Arena of Solutions</div>
+
+    <h1>Welcome to the<br>
+      <span>House of Prayer</span>
+    </h1>
+
+    <p>
+      A place of prayer, faith, transformation and spiritual growth.
+      Join us as we worship God, grow in His Word and experience His presence.
+    </p>
+
+    <a href="#services" class="btn">OUR SERVICES</a>
+    <a href="#about" class="btn btn-outline">DISCOVER OUR CHURCH</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-heading">
+    <span>Discover Our Ministry</span>
+    <h2>About Our Church</h2>
+  </div>
+
+  <div class="about-content">
+    <p>
+      HOUSE OF PRAYER CHURCH OF ALL NATIONS, known as
+      <strong>Arena of Solutions</strong>, is a Christian ministry
+      based in Qalakheng, Mohale's Hoek, Lesotho.
+    </p>
+
+    <p>
+      We are committed to prayer, the teaching of God's Word,
+      spiritual growth, fellowship and the transformation of lives
+      through faith in Jesus Christ.
+    </p>
+
+    <p>
+      Our doors are open to people seeking God, encouragement,
+      spiritual guidance and a deeper relationship with Him.
+    </p>
+  </div>
+</section>
+
+<section class="scripture">
+  <h2>A House of Prayer for All Nations</h2>
+  <p>
+    "For mine house shall be called an house of prayer
+    for all people."
+  </p>
+  <strong>ISAIAH 56:7</strong>
+</section>
+
+<section class="leadership" id="leadership">
+  <div class="section-heading">
+    <span>Our Spiritual Leadership</span>
+    <h2>Church Leadership</h2>
+    <p>Serving God's people and advancing His Kingdom.</p>
+  </div>
+
+  <div class="leader-grid">
+
+    <div class="leader-card">
+      <div class="leader-icon">✝</div>
+      <h3>Prophet Ntilane</h3>
+      <p>FOUNDER</p>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-icon">✝</div>
+      <h3>Prophet Mohlaoli</h3>
+      <p>SENIOR PASTOR</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-heading">
+    <span>Worship With Us</span>
+    <h2>Our Weekly Services</h2>
+    <p>There is a place for you at the House of Prayer.</p>
+  </div>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+      <div class="service-icon">♡</div>
+      <span class="day">TUESDAY</span>
+      <h3>Counselling Services</h3>
+      <p>
+        A time for counselling, spiritual guidance,
+        encouragement and support.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">✝</div>
+      <span class="day">WEDNESDAY</span>
+      <h3>Deliverance Service</h3>
+      <p>
+        A time dedicated to prayer, faith,
+        deliverance and spiritual renewal.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">✧</div>
+      <span class="day">SUNDAY</span>
+      <h3>Main Service</h3>
+      <p>
+        Come together for worship, fellowship
+        and the teaching of God's Word.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="media-section" id="sermons">
+  <div class="section-heading">
+    <span>Grow in the Word</span>
+    <h2>Sermons & Teachings</h2>
+    <p>
+      Discover biblical teachings and messages
+      to strengthen your walk with God.
+    </p>
+  </div>
+
+  <div class="media-grid">
+    <div class="media-card">
+      <h3>Latest Sermons</h3>
+      <p>
+        Sermon videos and messages from our church
+        will be featured here.
+      </p>
+    </div>
+
+    <div class="media-card">
+      <h3>Bible Teachings</h3>
+      <p>
+        Biblical lessons and spiritual resources
+        will be available here.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="events" id="events">
+  <div class="section-heading">
+    <span>Be Part of Our Fellowship</span>
+    <h2>Church Events</h2>
+  </div>
+
+  <div class="event-placeholder">
+    <h3>Upcoming Church Programmes</h3>
+    <p>
+      Information about conferences, special services,
+      prayer gatherings and church programmes will be
+      published here.
+    </p>
+  </div>
+</section>
+
+<section class="prayer">
+  <h2>We Believe in the Power of Prayer</h2>
+  <p>
+    Prayer is at the heart of our ministry.
+    We believe in seeking God, trusting His Word
+    and standing together in faith.
+    Prayer request contact information will be added soon.
+  </p>
+</section>
+
+<section class="location" id="contact">
+  <div class="section-heading">
+    <span>Come and Worship With Us</span>
+    <h2>Find Our Church</h2>
+  </div>
+
+  <div class="location-card">
+    <h3>House of Prayer Church of All Nations</h3>
+    <p><strong>Location:</strong> Qalakheng, Mohale's Hoek</p>
+    <p><strong>Country:</strong> Kingdom of Lesotho</p>
+    <p><strong>Identity:</strong> Arena of Solutions</p>
+    <p style="margin-top:15px;">
+      Contact details and additional directions
+      will be added soon.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <img src="logo.jpg" alt="Church logo">
+
+  <h3>HOUSE OF PRAYER CHURCH OF ALL NATIONS</h3>
+  <p>Arena of Solutions</p>
+  <p>Qalakheng, Mohale's Hoek, Lesotho</p>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> House of Prayer Church of All Nations.</p>
+    <p>All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("navigation").classList.remove("active");
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
