@@ -44,7 +44,7 @@ a {
 header {
     background: var(--deep-purple);
     color: white;
-    padding: 12px 6%;
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,6 +59,18 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background: white;
+    padding: 3px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: block;
 }
 
 .brand-text h2 {
@@ -172,17 +184,6 @@ nav a:hover {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.hero-logo {
-    width: 125px;
-    height: 125px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: white;
-    padding: 5px;
-    border: 3px solid var(--gold);
-    margin-bottom: 18px;
 }
 
 .welcome-label {
@@ -864,7 +865,7 @@ footer p {
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* MOBILE RESPONSIVENESS */
+/* TABLET */
 
 @media(max-width: 1000px) {
     .service-grid {
@@ -875,6 +876,8 @@ footer p {
         gap: 12px;
     }
 }
+
+/* MOBILE NAVIGATION */
 
 @media(max-width: 900px) {
     header {
@@ -909,27 +912,45 @@ footer p {
     }
 }
 
+/* SMALL MOBILE SCREENS */
+
 @media(max-width: 650px) {
-    section {
-        padding: 55px 6%;
+    header {
+        padding: 9px 4%;
+        gap: 10px;
+    }
+
+    .brand {
+        gap: 8px;
+        max-width: calc(100% - 55px);
+    }
+
+    .brand-logo {
+        width: 48px;
+        height: 48px;
     }
 
     .brand-text h2 {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .brand-text p {
-        font-size: 9px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .menu-toggle {
+        padding: 5px 10px;
+        font-size: 20px;
+    }
+
+    section {
+        padding: 55px 6%;
     }
 
     .hero {
         min-height: 680px;
         height: 88vh;
-    }
-
-    .hero-logo {
-        width: 95px;
-        height: 95px;
     }
 
     .hero-content {
@@ -992,14 +1013,25 @@ footer p {
 
 <body>
 
-<!-- HEADER -->
+<!-- HEADER WITH CHURCH LOGO -->
 
 <header>
+
     <div class="brand">
+
+        <img
+            src="MY%20LOGO.jpeg"
+            alt="House of Prayer Church of All Nations Logo"
+            class="brand-logo">
+
         <div class="brand-text">
             <h2>HOUSE OF PRAYER</h2>
             <p>CHURCH OF ALL NATIONS</p>
+            <p style="color:#d8ad55; letter-spacing:1.5px;">
+                ARENA OF SOLUTIONS
+            </p>
         </div>
+
     </div>
 
     <button
@@ -1021,6 +1053,7 @@ footer p {
         <a href="#prayer" onclick="closeMenu()">Prayer</a>
         <a href="#contact" onclick="closeMenu()">Contact</a>
     </nav>
+
 </header>
 
 <!-- HERO SLIDESHOW -->
@@ -1055,9 +1088,7 @@ footer p {
 
     <div class="hero-content">
 
-        <img src="MY%20LOGO.jpeg"
-             alt="House of Prayer Church Logo"
-             class="hero-logo">
+        <!-- LOGO REMOVED FROM HERO SECTION -->
 
         <div class="welcome-label">Welcome to</div>
 
@@ -1084,6 +1115,7 @@ footer p {
     </div>
 
     <div class="slide-dots">
+
         <button class="slide-dot active"
                 onclick="goToSlide(0)"
                 aria-label="Show photograph 1"></button>
@@ -1095,6 +1127,7 @@ footer p {
         <button class="slide-dot"
                 onclick="goToSlide(2)"
                 aria-label="Show photograph 3"></button>
+
     </div>
 
 </section>
@@ -1205,15 +1238,11 @@ footer p {
 
     <div class="leader-grid">
 
-        <!-- FOUNDER -->
-
         <div class="leader-card">
 
             <h3>Prophet L.I Ntilane</h3>
 
-            <p class="leader-role">
-                Founder
-            </p>
+            <p class="leader-role">Founder</p>
 
             <p class="leader-spouse">
                 Spouse: Makhothatso Ntilane
@@ -1224,8 +1253,6 @@ footer p {
             </span>
 
         </div>
-
-        <!-- MOHALE'S HOEK LEADERSHIP -->
 
         <div class="leader-card">
 
@@ -1261,27 +1288,17 @@ footer p {
 
     <div class="location-grid">
 
-        <!-- MAIN CHURCH -->
-
         <div class="location-card">
 
-            <span class="location-label">
-                MAIN CHURCH
-            </span>
+            <span class="location-label">MAIN CHURCH</span>
 
             <h3>Mafeteng</h3>
 
-            <p>
-                House of Prayer Church of All Nations
-            </p>
+            <p>House of Prayer Church of All Nations</p>
 
-            <p>
-                Led by Founder Prophet L.I Ntilane
-            </p>
+            <p>Led by Founder Prophet L.I Ntilane</p>
 
-            <p>
-                <strong>Lesotho</strong>
-            </p>
+            <p><strong>Lesotho</strong></p>
 
             <a href="#contact" class="btn btn-gold"
                style="margin-top:15px;">
@@ -1290,27 +1307,17 @@ footer p {
 
         </div>
 
-        <!-- BRANCH CHURCH -->
-
         <div class="location-card">
 
-            <span class="location-label">
-                BRANCH CHURCH
-            </span>
+            <span class="location-label">BRANCH CHURCH</span>
 
             <h3>Mohale's Hoek</h3>
 
-            <p>
-                Qalakheng, Mohale's Hoek
-            </p>
+            <p>Qalakheng, Mohale's Hoek</p>
 
-            <p>
-                Led by Prophet Makatseng Mohlaoli
-            </p>
+            <p>Led by Prophet Makatseng Mohlaoli</p>
 
-            <p>
-                <strong>Lesotho</strong>
-            </p>
+            <p><strong>Lesotho</strong></p>
 
             <a href="https://wa.me/26657014205"
                target="_blank"
@@ -1338,68 +1345,32 @@ footer p {
 
     <div class="service-grid">
 
-        <!-- TUESDAY -->
-
         <div class="service-card">
-
             <div class="symbol">✦</div>
-
             <h3>Tuesday</h3>
-
             <p>Counselling Services</p>
-
-            <p class="service-time">
-                07:00
-            </p>
-
+            <p class="service-time">07:00</p>
         </div>
 
-        <!-- WEDNESDAY -->
-
         <div class="service-card">
-
             <div class="symbol">✝</div>
-
             <h3>Wednesday</h3>
-
             <p>Church Service</p>
-
-            <p class="service-time">
-                10:00
-            </p>
-
+            <p class="service-time">10:00</p>
         </div>
 
-        <!-- FRIDAY -->
-
         <div class="service-card">
-
             <div class="symbol">🙏</div>
-
             <h3>Friday</h3>
-
             <p>Prayer Service</p>
-
-            <p class="service-time">
-                16:30
-            </p>
-
+            <p class="service-time">16:30</p>
         </div>
 
-        <!-- SUNDAY -->
-
         <div class="service-card">
-
             <div class="symbol">✧</div>
-
             <h3>Sunday</h3>
-
             <p>Main Worship Service</p>
-
-            <p class="service-time">
-                10:00
-            </p>
-
+            <p class="service-time">10:00</p>
         </div>
 
     </div>
@@ -1429,102 +1400,45 @@ footer p {
     <div class="sermon-grid">
 
         <article class="sermon-card">
-
             <div class="sermon-screen">
-
                 <div class="play-symbol">▶</div>
-
                 <h3>First Sermon Coming Soon</h3>
-
                 <p>Video will appear here</p>
-
             </div>
-
             <div class="sermon-info">
-
-                <p class="sermon-date">
-                    Sermon 01 | Date to be added
-                </p>
-
+                <p class="sermon-date">Sermon 01 | Date to be added</p>
                 <h3>Message Title Coming Soon</h3>
-
-                <p>
-                    A description of the sermon will be added
-                    here when the message is uploaded.
-                </p>
-
-                <span class="coming-soon">
-                    Coming Soon
-                </span>
-
+                <p>A description of the sermon will be added here when the message is uploaded.</p>
+                <span class="coming-soon">Coming Soon</span>
             </div>
-
         </article>
 
         <article class="sermon-card">
-
             <div class="sermon-screen">
-
                 <div class="play-symbol">▶</div>
-
                 <h3>Second Sermon Coming Soon</h3>
-
                 <p>Video will appear here</p>
-
             </div>
-
             <div class="sermon-info">
-
-                <p class="sermon-date">
-                    Sermon 02 | Date to be added
-                </p>
-
+                <p class="sermon-date">Sermon 02 | Date to be added</p>
                 <h3>Message Title Coming Soon</h3>
-
-                <p>
-                    Add a short summary of the teaching or
-                    message here.
-                </p>
-
-                <span class="coming-soon">
-                    Coming Soon
-                </span>
-
+                <p>Add a short summary of the teaching or message here.</p>
+                <span class="coming-soon">Coming Soon</span>
             </div>
-
         </article>
 
         <article class="sermon-card">
-
             <div class="sermon-screen">
-
                 <div class="play-symbol">▶</div>
-
                 <h3>Third Sermon Coming Soon</h3>
-
                 <p>Video will appear here</p>
-
             </div>
-
             <div class="sermon-info">
-
-                <p class="sermon-date">
-                    Sermon 03 | Date to be added
-                </p>
-
+                <p class="sermon-date">Sermon 03 | Date to be added</p>
                 <h3>Message Title Coming Soon</h3>
-
-                <p>
-                    Add a short summary of the teaching or
-                    message here.
-                </p>
-
-                <span class="coming-soon">
-                    Coming Soon
-                </span>
-
+                <p>Add a short summary of the teaching or message here.</p>
+                <span class="coming-soon">Coming Soon</span>
             </div>
-
         </article>
 
     </div>
@@ -1547,17 +1461,13 @@ footer p {
         <div class="facebook-video-wrap">
 
             <div class="live-placeholder" id="livePlaceholder">
-
                 <div class="live-icon">▶</div>
-
                 <h4>Our Live Services</h4>
-
                 <p>
                     Our next live service will be announced here.
                     Please visit our Facebook page to stay connected
                     and receive updates.
                 </p>
-
             </div>
 
             <iframe
@@ -1617,13 +1527,9 @@ footer p {
 <section class="prayer" id="prayer">
 
     <div class="section-heading">
-
         <h2>Prayer Requests & Testimonies</h2>
-
         <span></span>
-
         <p>We would love to stand with you in prayer</p>
-
     </div>
 
     <form class="prayer-form" onsubmit="sendPrayer(event)">
@@ -1632,18 +1538,14 @@ footer p {
             Submit Your Prayer Request
         </h3>
 
-        <label for="visitorName">
-            Your Name (Optional)
-        </label>
+        <label for="visitorName">Your Name (Optional)</label>
 
         <input
             type="text"
             id="visitorName"
             placeholder="Enter your name">
 
-        <label for="prayerMessage">
-            Your Prayer Request
-        </label>
+        <label for="prayerMessage">Your Prayer Request</label>
 
         <textarea
             id="prayerMessage"
@@ -1683,13 +1585,9 @@ footer p {
 <section class="contact" id="contact">
 
     <div class="section-heading">
-
         <h2>Get in Touch</h2>
-
         <span></span>
-
         <p>We would love to hear from you</p>
-
     </div>
 
     <div class="contact-details">
@@ -1727,7 +1625,6 @@ footer p {
         </p>
 
         <div style="margin-top:25px;">
-
             <a
                 href="https://wa.me/26657014205"
                 target="_blank"
@@ -1735,7 +1632,6 @@ footer p {
                 class="btn btn-gold">
                 Contact Us on WhatsApp
             </a>
-
         </div>
 
     </div>
@@ -1779,13 +1675,7 @@ footer p {
 
 <script>
 
-/* =========================================
-   FACEBOOK SETTINGS
-
-   Add the church Facebook page URL below.
-   Add a public Facebook Live video URL when
-   a live broadcast is available.
-========================================= */
+/* FACEBOOK SETTINGS */
 
 const FACEBOOK_PAGE_URL = "";
 
@@ -1878,31 +1768,20 @@ document.addEventListener("visibilitychange", function() {
 function setupFacebookLive() {
 
     const frame = document.getElementById("facebookLiveFrame");
-
     const placeholder = document.getElementById("livePlaceholder");
-
     const status = document.getElementById("liveStatus");
-
     const pageButton = document.getElementById("facebookPageButton");
-
     const setupMessage = document.getElementById("facebookSetupMessage");
-
-
-    // Facebook page button
 
     if (FACEBOOK_PAGE_URL.trim() !== "") {
 
         pageButton.href = FACEBOOK_PAGE_URL;
-
         pageButton.style.display = "inline-block";
 
         setupMessage.textContent =
             "Follow our Facebook page for service announcements and live broadcasts.";
 
     }
-
-
-    // Facebook live video
 
     if (FACEBOOK_LIVE_VIDEO_URL.trim() !== "") {
 
@@ -1912,19 +1791,15 @@ function setupFacebookLive() {
             "&show_text=false&width=800";
 
         frame.src = facebookEmbedURL;
-
         frame.style.display = "block";
-
         placeholder.style.display = "none";
 
         status.textContent = "LIVE VIDEO AVAILABLE";
-
         status.classList.add("live-now");
 
     } else {
 
         frame.style.display = "none";
-
         placeholder.style.display = "flex";
 
     }
@@ -1941,24 +1816,18 @@ function sendPrayer(event) {
     event.preventDefault();
 
     const name = document.getElementById("visitorName").value.trim();
-
     const prayer = document.getElementById("prayerMessage").value.trim();
 
     if (!prayer) {
-
         alert("Please enter your prayer request.");
-
         return;
-
     }
 
     let message =
         "Hello House of Prayer Church of All Nations.\n\n";
 
     if (name) {
-
         message += "My name is " + name + ".\n";
-
     }
 
     message += "My prayer request is:\n" + prayer;
