@@ -6,7 +6,9 @@
 
 <title>House of Prayer Church of All Nations | Arena of Solutions</title>
 
-<meta name="description" content="Welcome to House of Prayer Church of All Nations, Arena of Solutions, Qalakheng, Mohale's Hoek, Lesotho. A house of prayer for all people.">
+<meta name="description" content="Welcome to House of Prayer Church of All Nations, Arena of Solutions. Main church in Mafeteng, Lesotho, with a branch in Qalakheng, Mohale's Hoek. A house of prayer for all people.">
+
+<meta name="theme-color" content="#19082c">
 
 <style>
 :root {
@@ -406,7 +408,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-    max-width: 850px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -418,15 +420,70 @@ section {
     border: 1px solid #ead9b6;
 }
 
-.leader-card h3 {
-    color: var(--purple);
-    font-size: 22px;
-    margin-bottom: 5px;
-}
-
-.leader-card p {
+.leader-card .leader-role {
     color: #80602a;
     font-weight: bold;
+    margin: 5px 0;
+}
+
+.leader-card .leader-spouse {
+    color: #6d6174;
+    font-size: 14px;
+}
+
+.leader-card .church-location {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 7px 15px;
+    background: var(--purple);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* LOCATIONS */
+
+.locations {
+    background: #f8f1e7;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.location-card {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+    border-bottom: 5px solid var(--gold);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.location-card h3 {
+    color: var(--purple);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.location-card p {
+    margin: 8px 0;
+}
+
+.location-card .location-label {
+    display: inline-block;
+    padding: 6px 15px;
+    background: var(--purple);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 /* SERVICES */
@@ -446,7 +503,7 @@ section {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     max-width: 1100px;
     margin: auto;
@@ -469,6 +526,20 @@ section {
 .service-card h3 {
     color: var(--light-gold);
     margin-bottom: 8px;
+    font-size: 21px;
+}
+
+.service-card .service-time {
+    color: var(--gold);
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.service-note {
+    text-align: center;
+    margin-top: 30px;
+    color: #e5dbea;
 }
 
 /* SERMONS */
@@ -795,6 +866,16 @@ footer p {
 
 /* MOBILE RESPONSIVENESS */
 
+@media(max-width: 1000px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        gap: 12px;
+    }
+}
+
 @media(max-width: 900px) {
     header {
         flex-wrap: wrap;
@@ -821,10 +902,6 @@ footer p {
         width: 100%;
         padding: 10px 5px;
         border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
     }
 
     .sermon-grid {
@@ -879,6 +956,8 @@ footer p {
 
     .vm-grid,
     .leader-grid,
+    .location-grid,
+    .service-grid,
     .sermon-grid {
         grid-template-columns: 1fr;
     }
@@ -902,6 +981,11 @@ footer p {
     .live-placeholder {
         min-height: 190px;
     }
+
+    .whatsapp-float {
+        bottom: 15px;
+        right: 12px;
+    }
 }
 </style>
 </head>
@@ -918,13 +1002,19 @@ footer p {
         </div>
     </div>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+    <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu">
+        ☰
+    </button>
 
     <nav id="navigation">
         <a href="#home" onclick="closeMenu()">Home</a>
         <a href="#about" onclick="closeMenu()">About Us</a>
         <a href="#vision" onclick="closeMenu()">Vision & Mission</a>
         <a href="#leadership" onclick="closeMenu()">Leadership</a>
+        <a href="#locations" onclick="closeMenu()">Locations</a>
         <a href="#services" onclick="closeMenu()">Services</a>
         <a href="#sermons" onclick="closeMenu()">Sermons</a>
         <a href="#events" onclick="closeMenu()">Events</a>
@@ -937,17 +1027,21 @@ footer p {
 
 <section class="hero" id="home">
 
-    <img src="SERVICE.jpg"
-     class="hero-slide active"
-     alt="House of Prayer church service">
+    <div class="hero-slides">
 
-<img src="NTATE%20MOHLAOLI.jpg"
-     class="hero-slide"
-     alt="Senior Pastor Prophet Mohlaoli">
+        <img src="SERVICE.jpg"
+             class="hero-slide active"
+             alt="House of Prayer church service">
 
-<img src="MME%20RELE.jpg"
-     class="hero-slide"
-     alt="House of Prayer church ministry">
+        <img src="NTATE%20MOHLAOLI.jpg"
+             class="hero-slide"
+             alt="Prophet Makatseng Mohlaoli">
+
+        <img src="MME%20RELE.jpg"
+             class="hero-slide"
+             alt="House of Prayer church ministry">
+
+    </div>
 
     <div class="hero-overlay"></div>
 
@@ -962,7 +1056,7 @@ footer p {
     <div class="hero-content">
 
         <img src="MY%20LOGO.jpeg"
-             alt="Church Logo"
+             alt="House of Prayer Church Logo"
              class="hero-logo">
 
         <div class="welcome-label">Welcome to</div>
@@ -990,9 +1084,17 @@ footer p {
     </div>
 
     <div class="slide-dots">
-        <button class="slide-dot active" onclick="goToSlide(0)" aria-label="Show photograph 1"></button>
-        <button class="slide-dot" onclick="goToSlide(1)" aria-label="Show photograph 2"></button>
-        <button class="slide-dot" onclick="goToSlide(2)" aria-label="Show photograph 3"></button>
+        <button class="slide-dot active"
+                onclick="goToSlide(0)"
+                aria-label="Show photograph 1"></button>
+
+        <button class="slide-dot"
+                onclick="goToSlide(1)"
+                aria-label="Show photograph 2"></button>
+
+        <button class="slide-dot"
+                onclick="goToSlide(2)"
+                aria-label="Show photograph 3"></button>
     </div>
 
 </section>
@@ -1008,6 +1110,7 @@ footer p {
     </div>
 
     <div class="about-content">
+
         <p>
             Welcome to House of Prayer Church of All Nations,
             Arena of Solutions. We are a house of prayer committed
@@ -1017,15 +1120,22 @@ footer p {
 
         <p style="margin-top:18px;">
             We believe in the power of prayer, the Word of God,
-            healing, deliverance and the transforming presence of Jesus Christ.
-            Whether you are visiting for the first time or returning home,
-            there is a place for you here.
+            healing, deliverance and the transforming presence of
+            Jesus Christ. Whether you are visiting for the first
+            time or returning home, there is a place for you here.
         </p>
 
         <p style="margin-top:18px;">
-            Join us as we grow together in faith and fulfil the purpose
-            God has placed in our lives.
+            With our main church in Mafeteng and our branch in
+            Mohale's Hoek, we continue to reach communities with
+            the message of faith, hope and the love of Jesus Christ.
         </p>
+
+        <p style="margin-top:18px;">
+            Join us as we grow together in faith and fulfil the
+            purpose God has placed in our lives.
+        </p>
+
     </div>
 
 </section>
@@ -1033,9 +1143,15 @@ footer p {
 <!-- SCRIPTURE -->
 
 <div class="scripture">
+
     <h2>A House of Prayer for All People</h2>
-    <p>"For mine house shall be called an house of prayer for all people."</p>
+
+    <p>
+        "For mine house shall be called an house of prayer for all people."
+    </p>
+
     <small>ISAIAH 56:7</small>
+
 </div>
 
 <!-- VISION AND MISSION -->
@@ -1051,27 +1167,33 @@ footer p {
     <div class="vm-grid">
 
         <div class="vm-card">
+
             <h3>OUR VISION</h3>
+
             <p>
                 Our vision is to build a Healing Centre —
                 a place where Jesus is Lord and where we are kings.
             </p>
+
         </div>
 
         <div class="vm-card">
+
             <h3>OUR MISSION</h3>
+
             <p>
                 We are here on a mission, commissioned to serve a purpose.
                 Our purpose is to deliver our people from the powers of
                 darkness and to transform their minds.
             </p>
+
         </div>
 
     </div>
 
 </section>
 
-<!-- LEADERSHIP -->
+<!-- CHURCH LEADERSHIP -->
 
 <section class="leadership" id="leadership">
 
@@ -1083,14 +1205,121 @@ footer p {
 
     <div class="leader-grid">
 
-        <div class="leader-card">
-            <h3>Prophet Ntilane</h3>
-            <p>Founder</p>
-        </div>
+        <!-- FOUNDER -->
 
         <div class="leader-card">
-            <h3>Prophet Mohlaoli</h3>
-            <p>Senior Pastor</p>
+
+            <h3>Prophet L.I Ntilane</h3>
+
+            <p class="leader-role">
+                Founder
+            </p>
+
+            <p class="leader-spouse">
+                Spouse: Makhothatso Ntilane
+            </p>
+
+            <span class="church-location">
+                Main Church – Mafeteng
+            </span>
+
+        </div>
+
+        <!-- MOHALE'S HOEK LEADERSHIP -->
+
+        <div class="leader-card">
+
+            <h3>Prophet Makatseng Mohlaoli</h3>
+
+            <p class="leader-role">
+                Mohale's Hoek Church Leader
+            </p>
+
+            <p class="leader-spouse">
+                Spouse: Marelebohile Mohlaoli
+            </p>
+
+            <span class="church-location">
+                Branch Church – Mohale's Hoek
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CHURCH LOCATIONS -->
+
+<section class="locations" id="locations">
+
+    <div class="section-heading">
+        <h2>Our Church Locations</h2>
+        <span></span>
+        <p>Find a House of Prayer near you</p>
+    </div>
+
+    <div class="location-grid">
+
+        <!-- MAIN CHURCH -->
+
+        <div class="location-card">
+
+            <span class="location-label">
+                MAIN CHURCH
+            </span>
+
+            <h3>Mafeteng</h3>
+
+            <p>
+                House of Prayer Church of All Nations
+            </p>
+
+            <p>
+                Led by Founder Prophet L.I Ntilane
+            </p>
+
+            <p>
+                <strong>Lesotho</strong>
+            </p>
+
+            <a href="#contact" class="btn btn-gold"
+               style="margin-top:15px;">
+                Contact the Church
+            </a>
+
+        </div>
+
+        <!-- BRANCH CHURCH -->
+
+        <div class="location-card">
+
+            <span class="location-label">
+                BRANCH CHURCH
+            </span>
+
+            <h3>Mohale's Hoek</h3>
+
+            <p>
+                Qalakheng, Mohale's Hoek
+            </p>
+
+            <p>
+                Led by Prophet Makatseng Mohlaoli
+            </p>
+
+            <p>
+                <strong>Lesotho</strong>
+            </p>
+
+            <a href="https://wa.me/26657014205"
+               target="_blank"
+               rel="noopener"
+               class="btn btn-gold"
+               style="margin-top:15px;">
+                Contact the Church
+            </a>
+
         </div>
 
     </div>
@@ -1104,33 +1333,80 @@ footer p {
     <div class="section-heading">
         <h2>Our Weekly Services</h2>
         <span></span>
-        <p>Come fellowship with us</p>
+        <p>Come fellowship with us and experience the presence of God</p>
     </div>
 
     <div class="service-grid">
 
+        <!-- TUESDAY -->
+
         <div class="service-card">
+
             <div class="symbol">✦</div>
+
             <h3>Tuesday</h3>
+
             <p>Counselling Services</p>
+
+            <p class="service-time">
+                07:00
+            </p>
+
         </div>
 
+        <!-- WEDNESDAY -->
+
         <div class="service-card">
+
             <div class="symbol">✝</div>
+
             <h3>Wednesday</h3>
-            <p>Deliverance Service</p>
+
+            <p>Church Service</p>
+
+            <p class="service-time">
+                10:00
+            </p>
+
         </div>
 
+        <!-- FRIDAY -->
+
         <div class="service-card">
+
+            <div class="symbol">🙏</div>
+
+            <h3>Friday</h3>
+
+            <p>Prayer Service</p>
+
+            <p class="service-time">
+                16:30
+            </p>
+
+        </div>
+
+        <!-- SUNDAY -->
+
+        <div class="service-card">
+
             <div class="symbol">✧</div>
+
             <h3>Sunday</h3>
-            <p>Main Service</p>
+
+            <p>Main Worship Service</p>
+
+            <p class="service-time">
+                10:00
+            </p>
+
         </div>
 
     </div>
 
-    <p style="text-align:center; margin-top:25px; color:#e5dbea;">
-        Contact us for service times and further information.
+    <p class="service-note">
+        All are welcome. For further information about our
+        services and locations, please contact the church.
     </p>
 
 </section>
@@ -1146,83 +1422,114 @@ footer p {
     </div>
 
     <p class="sermon-intro">
-        Be encouraged, renewed and strengthened through the Word of God.
-        Our sermons and teachings will be available here.
+        Be encouraged, renewed and strengthened through the
+        Word of God. Our sermons and teachings will be available here.
     </p>
 
     <div class="sermon-grid">
 
-        <!-- SERMON PLACEHOLDER 1
-             When you have a sermon video, replace the sermon-screen
-             div with an embedded video iframe.
-             Update the title, date and description below.
-        -->
-
         <article class="sermon-card">
 
             <div class="sermon-screen">
+
                 <div class="play-symbol">▶</div>
+
                 <h3>First Sermon Coming Soon</h3>
+
                 <p>Video will appear here</p>
+
             </div>
 
             <div class="sermon-info">
-                <p class="sermon-date">Sermon 01 | Date to be added</p>
-                <h3>Message Title Coming Soon</h3>
-                <p>
-                    A description of the sermon will be added here
-                    when the message is uploaded.
+
+                <p class="sermon-date">
+                    Sermon 01 | Date to be added
                 </p>
-                <span class="coming-soon">Coming Soon</span>
+
+                <h3>Message Title Coming Soon</h3>
+
+                <p>
+                    A description of the sermon will be added
+                    here when the message is uploaded.
+                </p>
+
+                <span class="coming-soon">
+                    Coming Soon
+                </span>
+
             </div>
 
         </article>
 
-        <!-- SERMON PLACEHOLDER 2 -->
-
         <article class="sermon-card">
 
             <div class="sermon-screen">
+
                 <div class="play-symbol">▶</div>
+
                 <h3>Second Sermon Coming Soon</h3>
+
                 <p>Video will appear here</p>
+
             </div>
 
             <div class="sermon-info">
-                <p class="sermon-date">Sermon 02 | Date to be added</p>
-                <h3>Message Title Coming Soon</h3>
-                <p>
-                    Add a short summary of the teaching or message here.
+
+                <p class="sermon-date">
+                    Sermon 02 | Date to be added
                 </p>
-                <span class="coming-soon">Coming Soon</span>
+
+                <h3>Message Title Coming Soon</h3>
+
+                <p>
+                    Add a short summary of the teaching or
+                    message here.
+                </p>
+
+                <span class="coming-soon">
+                    Coming Soon
+                </span>
+
             </div>
 
         </article>
 
-        <!-- SERMON PLACEHOLDER 3 -->
-
         <article class="sermon-card">
 
             <div class="sermon-screen">
+
                 <div class="play-symbol">▶</div>
+
                 <h3>Third Sermon Coming Soon</h3>
+
                 <p>Video will appear here</p>
+
             </div>
 
             <div class="sermon-info">
-                <p class="sermon-date">Sermon 03 | Date to be added</p>
-                <h3>Message Title Coming Soon</h3>
-                <p>
-                    Add a short summary of the teaching or message here.
+
+                <p class="sermon-date">
+                    Sermon 03 | Date to be added
                 </p>
-                <span class="coming-soon">Coming Soon</span>
+
+                <h3>Message Title Coming Soon</h3>
+
+                <p>
+                    Add a short summary of the teaching or
+                    message here.
+                </p>
+
+                <span class="coming-soon">
+                    Coming Soon
+                </span>
+
             </div>
 
         </article>
 
     </div>
 
-    <!-- FACEBOOK LIVE STREAMING -->
+    <!-- FACEBOOK LIVE -->
 
     <div class="facebook-live">
 
@@ -1239,17 +1546,18 @@ footer p {
 
         <div class="facebook-video-wrap">
 
-            <!-- The Facebook live video will appear here
-                 after a Facebook Live video link is added. -->
-
             <div class="live-placeholder" id="livePlaceholder">
+
                 <div class="live-icon">▶</div>
+
                 <h4>Our Live Services</h4>
+
                 <p>
                     Our next live service will be announced here.
                     Please visit our Facebook page to stay connected
                     and receive updates.
                 </p>
+
             </div>
 
             <iframe
@@ -1272,7 +1580,8 @@ footer p {
             Visit Our Facebook Page
         </a>
 
-        <p id="facebookSetupMessage" style="font-size:12px; margin-top:15px;">
+        <p id="facebookSetupMessage"
+           style="font-size:12px; margin-top:15px;">
             Facebook streaming connection will be activated soon.
         </p>
 
@@ -1291,11 +1600,14 @@ footer p {
     </div>
 
     <div class="placeholder-card">
+
         <h3>Stay Connected</h3>
+
         <p>
             Church programmes, special services, conferences
             and upcoming events will be announced here.
         </p>
+
     </div>
 
 </section>
@@ -1305,9 +1617,13 @@ footer p {
 <section class="prayer" id="prayer">
 
     <div class="section-heading">
+
         <h2>Prayer Requests & Testimonies</h2>
+
         <span></span>
+
         <p>We would love to stand with you in prayer</p>
+
     </div>
 
     <form class="prayer-form" onsubmit="sendPrayer(event)">
@@ -1316,14 +1632,18 @@ footer p {
             Submit Your Prayer Request
         </h3>
 
-        <label for="visitorName">Your Name (Optional)</label>
+        <label for="visitorName">
+            Your Name (Optional)
+        </label>
 
         <input
             type="text"
             id="visitorName"
             placeholder="Enter your name">
 
-        <label for="prayerMessage">Your Prayer Request</label>
+        <label for="prayerMessage">
+            Your Prayer Request
+        </label>
 
         <textarea
             id="prayerMessage"
@@ -1363,22 +1683,51 @@ footer p {
 <section class="contact" id="contact">
 
     <div class="section-heading">
+
         <h2>Get in Touch</h2>
+
         <span></span>
+
         <p>We would love to hear from you</p>
+
     </div>
 
     <div class="contact-details">
 
         <h3>HOUSE OF PRAYER CHURCH OF ALL NATIONS</h3>
 
-        <p><strong>Identity:</strong> Arena of Solutions</p>
+        <p>
+            <strong>Identity:</strong>
+            Arena of Solutions
+        </p>
 
-        <p><strong>Location:</strong> Qalakheng, Mohale's Hoek, Lesotho</p>
+        <p>
+            <strong>Main Church:</strong>
+            Mafeteng, Lesotho
+        </p>
 
-        <p><strong>WhatsApp:</strong> +266 5701 4205</p>
+        <p>
+            <strong>Branch Church:</strong>
+            Qalakheng, Mohale's Hoek, Lesotho
+        </p>
+
+        <p>
+            <strong>Founder:</strong>
+            Prophet L.I Ntilane
+        </p>
+
+        <p>
+            <strong>Mohale's Hoek Church Leader:</strong>
+            Prophet Makatseng Mohlaoli
+        </p>
+
+        <p>
+            <strong>WhatsApp:</strong>
+            +266 5701 4205
+        </p>
 
         <div style="margin-top:25px;">
+
             <a
                 href="https://wa.me/26657014205"
                 target="_blank"
@@ -1386,6 +1735,7 @@ footer p {
                 class="btn btn-gold">
                 Contact Us on WhatsApp
             </a>
+
         </div>
 
     </div>
@@ -1400,7 +1750,9 @@ footer p {
 
     <p>ARENA OF SOLUTIONS</p>
 
-    <p>Qalakheng, Mohale's Hoek, Lesotho</p>
+    <p>Main Church: Mafeteng, Lesotho</p>
+
+    <p>Branch Church: Qalakheng, Mohale's Hoek, Lesotho</p>
 
     <p style="margin-top:15px;">
         "For mine house shall be called an house of prayer for all people."
@@ -1427,21 +1779,19 @@ footer p {
 
 <script>
 
-/* ==================================================
+/* =========================================
    FACEBOOK SETTINGS
 
-   1. Add the church Facebook page URL below.
-   2. When you have a Facebook Live video, add its
-      full public video URL in FACEBOOK_LIVE_VIDEO_URL.
-
-   Leave the live video setting empty when the church
-   is not streaming. The placeholder will appear.
-================================================== */
+   Add the church Facebook page URL below.
+   Add a public Facebook Live video URL when
+   a live broadcast is available.
+========================================= */
 
 const FACEBOOK_PAGE_URL = "";
 
-// Example format:
+// Example:
 // https://www.facebook.com/watch/?v=123456789
+
 const FACEBOOK_LIVE_VIDEO_URL = "";
 
 
@@ -1469,12 +1819,18 @@ function showSlide(index) {
     if (!slides.length) return;
 
     slides[currentSlide].classList.remove("active");
-    dots[currentSlide].classList.remove("active");
+
+    if (dots[currentSlide]) {
+        dots[currentSlide].classList.remove("active");
+    }
 
     currentSlide = (index + slides.length) % slides.length;
 
     slides[currentSlide].classList.add("active");
-    dots[currentSlide].classList.add("active");
+
+    if (dots[currentSlide]) {
+        dots[currentSlide].classList.add("active");
+    }
 }
 
 function changeSlide(direction) {
@@ -1513,6 +1869,7 @@ document.addEventListener("visibilitychange", function() {
     } else {
         restartSlideshow();
     }
+
 });
 
 
@@ -1521,23 +1878,31 @@ document.addEventListener("visibilitychange", function() {
 function setupFacebookLive() {
 
     const frame = document.getElementById("facebookLiveFrame");
+
     const placeholder = document.getElementById("livePlaceholder");
+
     const status = document.getElementById("liveStatus");
+
     const pageButton = document.getElementById("facebookPageButton");
+
     const setupMessage = document.getElementById("facebookSetupMessage");
 
-    // Show the Facebook page button when its URL is provided.
+
+    // Facebook page button
 
     if (FACEBOOK_PAGE_URL.trim() !== "") {
 
         pageButton.href = FACEBOOK_PAGE_URL;
+
         pageButton.style.display = "inline-block";
+
         setupMessage.textContent =
             "Follow our Facebook page for service announcements and live broadcasts.";
 
     }
 
-    // Show the embedded live video when a video URL is provided.
+
+    // Facebook live video
 
     if (FACEBOOK_LIVE_VIDEO_URL.trim() !== "") {
 
@@ -1547,18 +1912,23 @@ function setupFacebookLive() {
             "&show_text=false&width=800";
 
         frame.src = facebookEmbedURL;
+
         frame.style.display = "block";
+
         placeholder.style.display = "none";
 
         status.textContent = "LIVE VIDEO AVAILABLE";
+
         status.classList.add("live-now");
 
     } else {
 
         frame.style.display = "none";
+
         placeholder.style.display = "flex";
 
     }
+
 }
 
 setupFacebookLive();
@@ -1571,17 +1941,24 @@ function sendPrayer(event) {
     event.preventDefault();
 
     const name = document.getElementById("visitorName").value.trim();
+
     const prayer = document.getElementById("prayerMessage").value.trim();
 
     if (!prayer) {
+
         alert("Please enter your prayer request.");
+
         return;
+
     }
 
-    let message = "Hello House of Prayer Church of All Nations.\n\n";
+    let message =
+        "Hello House of Prayer Church of All Nations.\n\n";
 
     if (name) {
+
         message += "My name is " + name + ".\n";
+
     }
 
     message += "My prayer request is:\n" + prayer;
